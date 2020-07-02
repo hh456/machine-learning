@@ -7,9 +7,9 @@ def load_file(train_num,test_num):
     test_image=np.zeros((test_num,28*28))
     train_label = np.zeros(train_num)
     test_label = np.zeros(test_num)
-    file_data=open('train-images.IDX3-UBYTE','rb')
+    file_data=open('train_images.IDX3-UBYTE','rb')
     file_data.seek(16)
-    file_label=open('train-labels.idx1-ubyte','rb')
+    file_label=open('train_labels.idx1-ubyte','rb')
     file_label.seek(8)
     for i in range(train_num):
         for j in range(28 * 28):
@@ -22,9 +22,9 @@ def load_file(train_num,test_num):
         sign = int.from_bytes(data, byteorder='big')
         train_label[i] = sign
 
-    file_data2=open('test-images.IDX3-UBYTE','rb')
+    file_data2=open('test_images.IDX3-UBYTE','rb')
     file_data2.seek(16)
-    file_label2=open('test-labels.idx1-ubyte','rb')
+    file_label2=open('test_labels.idx1-ubyte','rb')
     file_label2.seek(8)
     for i in range(test_num):
         for j in range(28 * 28):
